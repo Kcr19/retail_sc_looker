@@ -159,7 +159,7 @@ view: consumer_order {
   }
   measure: loyalty_count{
     type: count_distinct
-    drill_fields: [tier,loyalty_count]
+    drill_fields: [tier, loyalty_count]
     sql: ${TABLE}.loyalty_num ;;
   }
   dimension: primary_key {
@@ -172,12 +172,14 @@ view: consumer_order__ol {
   dimension: brand {
     type: string
     description: "brand of product"
+    full_suggestions: yes
     sql: brand ;;
   }
 
   dimension: class {
     type: string
     description: "class of product's hierarchy"
+    full_suggestions: yes
     sql: class ;;
   }
 
@@ -191,6 +193,7 @@ view: consumer_order__ol {
   dimension: dept {
     type: string
     description: "dept of product's hierarchy"
+    full_suggestions: yes
     sql: dept ;;
   }
 
@@ -239,6 +242,7 @@ view: consumer_order__ol {
   dimension: sub_class {
     type: string
     description: "sub class of product's hierarchy"
+    full_suggestions: yes
     sql: sub_class ;;
   }
 
@@ -257,6 +261,7 @@ view: consumer_order__ol {
   dimension: vendor {
     type: string
     description: "product vendor"
+    full_suggestions: yes
     sql: vendor ;;
   }
   dimension: p_key{
