@@ -162,6 +162,12 @@ view: consumer_order {
     drill_fields: [tier, loyalty_count]
     sql: ${TABLE}.loyalty_num ;;
   }
+  measure: repeat_customers {
+    type: count_distinct
+    sql: case when ${transaction_id}>1
+    then ${consumer_id}
+    END;;
+  }
   dimension: primary_key {
     primary_key: yes
     sql: ${TABLE}.order_id ;;
